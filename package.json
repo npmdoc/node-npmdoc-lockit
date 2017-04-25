@@ -1,1 +1,38 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-lockit",     "homepage": "https://github.com/npmdoc/node-npmdoc-lockit",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-lockit.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic api documentation for  [lockit (v1.3.1)](https://github.com/zemirco/lockit#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-lockit.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-lockit) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-lockit.svg)](https://travis-ci.org/npmdoc/node-npmdoc-lockit)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-lockit",
+    "keywords": [
+        "documentation",
+        "lockit"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_lockit.js",
+    "name": "npmdoc-lockit",
+    "nameAlias": "npmdoc_lockit",
+    "nameOriginal": "npmdoc-lockit",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-lockit.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
